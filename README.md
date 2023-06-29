@@ -74,7 +74,7 @@ values shown, outputing the resulting throughput in Requests/Second and in Bytes
 for PARTITION_COUNT in 10 15 20 25; do
 ```
 
-Use this progranm to simulate a distributed data processing environment like Spark, to test the achievable throughput using the representative sample
+Use this program to simulate a distributed data processing environment like Spark, to test the achievable throughput using the representative sample
 text data in the PAYLOAD file.
 
 ### 5. samples directory
