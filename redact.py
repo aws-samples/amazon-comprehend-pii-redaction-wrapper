@@ -20,7 +20,6 @@ git clone https://github.com/aws-samples/amazon-comprehend-s3-object-lambda-func
 current_dir = os.path.dirname(os.path.abspath(__file__))
 package_dir = os.path.join(current_dir, "redact_modules/src")
 sys.path.append(package_dir)
-print(package_dir)
 from clients.comprehend_client import ComprehendClient
 from config import DOCUMENT_MAX_SIZE_CONTAINS_PII_ENTITIES, DOCUMENT_MAX_SIZE_DETECT_PII_ENTITIES, DEFAULT_LANGUAGE_CODE, COMPREHEND_ENDPOINT_URL
 from data_object import RedactionConfig
@@ -60,7 +59,6 @@ def redact_text(text):
         comprehendClient.redaction_executor_service = ThreadPoolExecutor(max_workers=1)
     language_code = DEFAULT_LANGUAGE_CODE
     redaction_config = RedactionConfig()
-    print("Pii Entity Types to be redacted:" + str(redaction_config.pii_entity_types))
     pii_classification_segmenter = Segmenter(DOCUMENT_MAX_SIZE_CONTAINS_PII_ENTITIES)
     pii_redaction_segmenter = Segmenter(DOCUMENT_MAX_SIZE_DETECT_PII_ENTITIES)
     redactor = Redactor(redaction_config)
